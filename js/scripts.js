@@ -9,7 +9,7 @@ function equilateral() {
   return false;
 }
 
-/*function isosceles() {
+function isosceles() {
   if (length1 === length2 && length1 === length3) {
   return true;
 } else {
@@ -33,4 +33,4 @@ function notTriangle() {
   } else {
     return false;
   }
-}*/
+}
