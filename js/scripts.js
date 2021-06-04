@@ -1,36 +1,19 @@
-const length1 = parseInt(prompt("Enter length1:"));
-const length2 = parseInt(promp("Enter length2:"));
-const length3 = parseInt(prompt("Enter length3:"));
+$(document).ready(function(){
+  $("form#container").submit(function(event) {
+    event.preventDefault();
+    const length1 = parseInt(prompt("Enter length1:")).val();
+    const length2 = parseInt(promp("Enter length2:")).val();
+    const length3 = parseInt(prompt("Enter length3:")).val();
 
-function equilateral() {
-  if (length1 === length2 && length2 === length3) {
-  return true;
-} else {
-  return false;
-}
-
-function isosceles() {
-  if (length1 === length2 && length1 === length3) {
-  return true;
-} else {
-  return false;
-}
-
-function scalene() {
-  if (length1 !== length2 && length1 !== length3) {
-  return true;
-} else {
-  return false;
-}
-
-function notTriangle() {
-  if (length1 + length2 === length3) {
-    return true;
-  } else if (length1 + length3 === length3) {
-    return true;
-  } else if (length2 + length3 === length1) {
-    return true;
-  } else {
-    return false;
-  }
-}
+    let result;
+      if (length1 === length2 && length2 === length3) {
+      result = $("#equilateral").show();
+    } else if (length1 === length2 && length1 === length3) {
+      result = $("#isosceles").show();
+    } else if (length1 !== length2 && length1 !== length3) {
+      result = $("#scalene").show();
+    } else {
+      return ("not a triangle");
+    }
+  })
+})
